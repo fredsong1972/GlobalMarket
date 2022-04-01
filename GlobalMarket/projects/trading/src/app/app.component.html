@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  {{title}} |
+  <button class="navbar-toggler" type="button"
+          data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false"
+          aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="navbar-nav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link">Home</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<mat-card>
+  <mat-card-subtitle style="margin-top:-10px">Symbol Quote</mat-card-subtitle>
+  <div class="stock-div">
+    <mat-form-field appearance="fill">
+      <mat-select id="symbol" class="symbol" [ngModel]="widgetConfig.symbol" (ngModelChange)="onSymbolChange($event)" required>
+        <mat-option *ngFor="let symbol of symbols" [value]="symbol">{{symbol}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <span>{{quote?.shortName}}</span>
+    <span matBadge="{{quote?.regularMarketPrice}}" matBadgeSize="medium">Market Price</span>
+    <span matBadge="{{quote?.regularMarketDayHigh}}" matBadgeSize="medium">Market Day High Price</span>
+    <span matBadge="{{quote?.regularMarketDayLow}}" matBadgeSize="medium">Market Day Low Price</span>
+    <span matBadge="{{quote?.ask}}" matBadgeSize="medium">Ask</span>
+    <span matBadge="{{quote?.ask}}" matBadgeSize="medium">Bid</span>
+  </div>
+</mat-card>
+
+<mat-divider></mat-divider>
+
+<mat-card>
+  <mat-card-subtitle style="margin-top:-10px">Live Chart</mat-card-subtitle>
+  <tradingview-widget [widgetConfig]="widgetConfig"></tradingview-widget>
+</mat-card>
+
+
+

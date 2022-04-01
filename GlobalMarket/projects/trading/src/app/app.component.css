@@ -1,0 +1,28 @@
+  .stock-div {
+    display: block;
+    height: 32px
+  }
+
+  .stock-div .symbol {
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    color: #0000fc;
+    padding-right: 10px
+  }
+
+  .stock-div span {
+      padding-left: 100px;
+  }
+
+ ::ng-deep .mat-form-field {
+  font-size: 10px;
+}
+
+::ng-deep .mat-form-field-appearance-fill {
+  margin-top: -15px;
+}
+
+
+
+
