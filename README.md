@@ -1,5 +1,6 @@
 # GlobalMarket
 
+![Alt text](/Screenshot.PNG?raw=true "Global Market")
 The frontend project was generated with Visual Studio 2022 standalone Angular template ([Angular CLI] version 13.2.5).
 
 The backend project was generated with Visual Studio 2022 ASP.NET Core Web API template using .Net 6.0.
@@ -14,7 +15,7 @@ Run `build` in Visual Studio to build the solution. The frontend build artifacts
 
 ## Angular Material
 
-The frontend project is using Angular Material to style UI.
+The frontend project is using Angular Material (https://material.angular.io/components/) to style UI.
 
 ## Tradingview widget
 

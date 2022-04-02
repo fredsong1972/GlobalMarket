@@ -5,7 +5,13 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "GlobalMarket", "GlobalMarket\GlobalMarket.esproj", "{E374A426-81C3-45F4-B836-584BF6EADDFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalMarketAPI", "GlobalMarketAPI\GlobalMarketAPI.csproj", "{51B97DD0-DC61-466A-AC4D-546A4B13517C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GlobalMarketAPI", "GlobalMarketAPI\GlobalMarketAPI.csproj", "{51B97DD0-DC61-466A-AC4D-546A4B13517C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{CB7B9A58-4287-4DD8-9962-130E6AFE8433}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
