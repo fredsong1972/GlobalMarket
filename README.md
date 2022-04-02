@@ -21,6 +21,6 @@ The frontend project is using Angular Material (https://material.angular.io/comp
 
 The frontend project is using tradingview widget (https://www.tradingview.com/widget/).
 
-## Yahoo Finace API
+## Yahoo Finance API
 
 The backend project is using Yahoo Finance API (https://www.yahoofinanceapi.com/) to get symbol quote.
