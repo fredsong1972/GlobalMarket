@@ -30,6 +30,7 @@ export class AppComponent {
     'AAPL',
     'AMZN',
     'TSLA',
+    'WTC',
     'BTCUSD',
     'ETHUSD',
     'XAUUSD'
