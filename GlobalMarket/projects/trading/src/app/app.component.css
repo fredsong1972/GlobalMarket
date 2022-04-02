@@ -1,7 +1,8 @@
-  .stock-div {
-    display: block;
-    height: 32px
-  }
+.stock-div {
+  display: block;
+  height: 30px;
+  padding-bottom:10px
+}
 
   .stock-div .symbol {
     font-weight: bold;
@@ -11,18 +12,18 @@
     padding-right: 10px
   }
 
-  .stock-div span {
-      padding-left: 100px;
-  }
+.symbol-price-box.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
 
- ::ng-deep .mat-form-field {
+.symbol-price-chip .cdk-drop-list-dragging {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+::ng-deep .mat-form-field {
   font-size: 10px;
 }
 
 ::ng-deep .mat-form-field-appearance-fill {
   margin-top: -15px;
 }
-
-
-
-

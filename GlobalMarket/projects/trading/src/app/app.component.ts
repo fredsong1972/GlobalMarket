@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { ITradingViewWidget, Themes } from 'angular-tradingview-widget'
-import { Quote } from './app.model'
+import { Quote, DataItem } from './app.model'
 
 @Component({
   selector: 'app-root',
@@ -35,13 +36,24 @@ export class AppComponent {
   ];
 
   public quote?: Quote;
+  public data: DataItem[] = [];
 
+  public isProgressing: boolean = false;
   constructor(private http: HttpClient) {
   }
 
   ngOnInit(): void {
+    this.isProgressing = true;
     this.http.get<Quote>(`/finance/quote?symbol=${this.widgetConfig.symbol}`).subscribe(result => {
       this.quote = result;
+      this.data = [
+        { name: "Price", value: this.quote.regularMarketPrice },
+        { name: "Day High", value: this.quote.regularMarketDayHigh },
+        { name: "Day Low", value: this.quote.regularMarketDayLow },
+        { name: "Ask", value: this.quote.ask },
+        { name: "Bid", value: this.quote.bid },
+      ];
+      this.isProgressing = false;
     }, error => console.error(error));
   }
 
@@ -60,4 +72,9 @@ export class AppComponent {
     };
     this.ngOnInit();
   }
+
+  drop(event: CdkDragDrop<DataItem[]>) {
+    moveItemInArray(this.data, event.previousIndex, event.currentIndex);
+  }
 }
+

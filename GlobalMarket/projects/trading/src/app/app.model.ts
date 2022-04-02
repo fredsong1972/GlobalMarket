@@ -8,3 +8,8 @@ export interface Quote {
   bid: number;
   ask: number;
 }
+
+export interface DataItem {
+  name: string;
+  value: number;
+}

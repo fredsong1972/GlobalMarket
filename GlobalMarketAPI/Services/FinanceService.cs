@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Linq;
+using Newtonsoft.Json;
 using GlobalMarketAPI.Models;
 using GlobalMarketAPI.Settings;
 
@@ -8,6 +9,7 @@ namespace GlobalMarketAPI.Services
     {
         private readonly HttpClient _httpClient;
         const string QuoteURL = "v6/finance/quote";
+        private readonly Dictionary<string,string> _symbolMap = new Dictionary<string,string>();
 
 
         public FinanceService(YahooFinanceSettings settings)
@@ -15,10 +17,15 @@ namespace GlobalMarketAPI.Services
             _httpClient = new HttpClient();
             _httpClient.DefaultRequestHeaders.Add("X-API-KEY", new [] { settings.APIKey});
             _httpClient.BaseAddress = new Uri(settings.BaseURL ?? "");
+            if (settings.SymbolMapInfo != null && settings.SymbolMapInfo.Count > 0)
+            {
+                _symbolMap = settings.SymbolMapInfo.ToDictionary(x => x.Key, x => x.Value);
+            }
         }
 
         public async Task<Quote> GetQuote(string symbol)
         {
+            symbol = _symbolMap.ContainsKey(symbol) ? _symbolMap[symbol] : symbol;
             var url = QuoteURL + $"?symbols={symbol}";
             try
             {
